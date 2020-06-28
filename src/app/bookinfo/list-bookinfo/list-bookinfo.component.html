@@ -1,0 +1,36 @@
+<div class="row header">
+    <div class="col-sm">
+        <h4>Products</h4>
+    </div>
+</div>
+<div class="row content">
+    <div class="col-sm-12">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                   
+                    <th scope="col">Title</th>
+                    <th scope="col">subtitle</th>
+                    <th scope="col">author</th>
+                    <th scope="col">publisher</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let book of books | async; index as i">
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.subtitle }}</td>
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.publisher }}</td>
+
+                    <td><button class='fa fa-eye' (click)='viewBook(book)'>
+                        <mat-icon aria-hidden="false" aria-label="Example view_week icon">view</mat-icon>
+                    </button></td> 
+                    <td><button  (click)='deleteBook(book)'>
+                        <mat-icon aria-hidden="false" aria-label="Example delete icon">delete</mat-icon>
+                    </button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
